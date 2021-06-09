@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe Ordering Form</title>
+    <link href="coffee.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script>
+      
+      function view()
+        {
+            var name =document.getElementById("name").value;
+            if(name=="")
+            {
+                alert("please enter your name first");
+            }
+            else
+            {
+                var total;
+                var type =document.getElementById("type").value;
+                var shots =document.getElementById("shots").value;
+                if(type == "Drip coffee"){
+                    total = 3 + (0.5 * shots);
+                }
+                else if(type == "Americano"){
+                    total = 5 + (0.5 * shots);
+                }
+                else if(type == "Cappuccino"){
+                    total = 6.5 + (0.5 * shots);
+                }
+                else{
+                    total = 7.5 + (0.5 * shots);
+                }
+                alert("Name : " +name +"\nType : "+type+"\nNo. of Shots : "+shots+"\nTotal Cost $ : "+total);
+            }
+        }
+
+    </script>
+</head>
+<body class="body1" >
+<h1>Coffee Ordering Form</h1>
+<div id="dv1">
+<table   cellpadding="20" cellspacing="30">
+<tr>
+    <td><h3>DRINKS</h3></td>
+    <td><H4>PRICES</H4></td>
+</tr>
+<tr>
+    <td>Drip coffee</td>
+    <td>$3.00</td>
+</tr>
+<tr>
+    <td>Americano</td>
+    <td>$5.0</td>
+</tr>
+<tr>
+    <td>Cappuccino </td>
+    <td>$6.50 </td>
+</tr>
+<tr>
+    <td>Latte</td>
+    <td>$7.50</td>
+</tr>
+</table>
+</div>
+<div id=dv2>
+    <table cellpadding="20" cellspacing="30" >
+        <tr>
+            <td>NAME<br><input type="text"  id="name"  style="height: 35px; width: 150px;"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>DRINK TYPE<br><select  style="width: 150px; height: 35px;"  id="type" >
+                <option value="1">Drip coffee</option>
+                <option value="2">Americano</option>
+                <option value="3">Cappuccino </option>
+                <option value="4">Latte </option>
+            </select></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>NO.OF EXTRA SHOTS<br><select style="width: 150px; height: 35px;" id="shots">
+                <option value="1">Espresso shot x1</option>
+                <option value="2">Espresso shot x2</option>
+                <option value="3">Espresso shot x3</option>
+                <option value="4">Espresso shot x4</option>
+            </select></td>
+            <td></td>
+        </tr>
+        <tr>
+          <TD>  <input type="button" onclick="view()" value="SUBMIT" style="width: 150px; height: 35px;"></TD>
+        </tr>
+    </table>
+
+</div>
+</body>
